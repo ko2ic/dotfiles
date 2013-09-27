@@ -9,6 +9,7 @@
 *.swp
 *.svn
 .vim/.netrwhist
+.vim/bundle/
 #########Android############
 # built application files
 *.apk
