@@ -21,3 +21,7 @@ after clone
 `$ chmod 766 dotfiles.sh`
 
 `$ ./dotfiles.sh`
+
+5.append global gitignore to .gitconfig
+
+`$ git config --global core.excludesfile ~/.gitignore`
