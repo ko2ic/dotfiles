@@ -1,0 +1,21 @@
+shell=/bin/bash
+escape t
+defscrollback 10000
+vbell off
+defutf8 on
+defkanji utf8
+defencoding utf8
+encoding utf8 utf8
+bind u eval 'encoding utf8' 'info'
+bind eval 'encoding utf8' 'info'
+bind e eval 'encoding eucjp' 'info'
+bind eval 'encoding eucjp' 'info'
+startup_message off
+hardstatus on
+hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gW} %-w%{= wk}%n %t%{-}%+w %=%{gk}$USER@$HOSTNAME[$LANG] (%l) "
+# term256
+#term xterm
+defbce on
+attrcolor b ".I"
+autodetach on
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'

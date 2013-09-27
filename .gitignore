@@ -1,0 +1,41 @@
+# gitignoreする前commitしてしまった場合は一旦削除
+# git rm --cached filename
+
+# globalなgitignoreを利用できるようにするコマンド(.gitconfigに書き込まれる)
+# git config --global core.excludesfile ~/.gitignore
+
+#########general############
+.DS_Store
+*.swp
+*.svn
+.vim/.netrwhist
+#########Android############
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+########Java#################
+# Java class files
+*.class
+
+# generated files
+target/
+
+# Eclipse project files
+.classpath
+.project
+.checkstyle
+.settings/
+
+# Xcode
+xcuserdata/

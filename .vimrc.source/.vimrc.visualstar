@@ -1,0 +1,6 @@
+map * <Plug>(visualstar-*)N 
+map # <Plug>(visualstar-#)N
+
+noremap <Plug>N N
+map * <Plug>(visualstar-*)<Plug>N 
+map # <Plug>(visualstar-#)<Plug>N
