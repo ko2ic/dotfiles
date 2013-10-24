@@ -36,6 +36,7 @@ export DISPLAY=:0.0
 
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
+export SCREENDIR=~/.screens
 export SVN_EDITOR=/opt/local/bin/vim
 
 if [ -f ~/.bashrc ] ; then
