@@ -57,8 +57,8 @@ set virtualedit=block
 " makefileの場合の処理
 autocmd FileType make setlocal noexpandtab
 " xmlファイル用の折り畳設定
-let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
+"let g:xml_syntax_folding=1
+"au FileType xml setlocal foldmethod=syntax
 
 " %でのジャンプ機能を拡張
 :runtime macros/matchit.vim
