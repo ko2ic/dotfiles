@@ -46,12 +46,14 @@ set showcmd
 " set clipboard+=unnamed
 " :ls時に最後に開いた場所にカーソルを戻す
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" ヤンク後に何度pしても置き換わらないようにする
+vnoremap <silent> <C-p> "0p<CR>
 " ペースト直後のテキストをすぐに選択する
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " ヤンクした文字列とカーソル位置の文字列を置換する
-nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR> 
-vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR> 
-nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+" nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR> 
+" vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR> 
+" nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 " 矩形ビジュアルモードで文字のない所でも選択
 set virtualedit=block
 " makefileの場合の処理
