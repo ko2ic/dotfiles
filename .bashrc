@@ -1,9 +1,3 @@
-alias mvn3='/usr/local/apache-maven-3.0.4/bin/mvn'
-alias svn16='/usr/bin/svn'
-alias svn17='/opt/local/bin/svn'
-alias svn='/usr/bin/svn'
-
-
 if [ "$TERM" = "screen-bce" ]; then
     # ディレクトリ名を表示する場合
     PROMPT_COMMAND='echo -ne "\033]0;$(whoami)@$(hostname):$(pwd)\007"'

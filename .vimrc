@@ -1,18 +1,21 @@
-if filereadable(expand('~/.vimrc.source/.vimrc.vundle')) 
-  source ~/.vimrc.source/.vimrc.vundle
+if filereadable(expand('~/.vimrc.source/.vimrc.neobundle')) 
+  source ~/.vimrc.source/.vimrc.neobundle
 endif
-if filereadable(expand('~/.vimrc.source/.vimrc.netrw')) 
-  source ~/.vimrc.source/.vimrc.netrw
-endif
-if filereadable(expand('~/.vimrc.source/.vimrc.vimfiler')) 
-  source ~/.vimrc.source/.vimrc.vimfiler
-endif
-if filereadable(expand('~/.vimrc.source/.vimrc.visualstar')) 
-  source ~/.vimrc.source/.vimrc.visualstar
-endif
-if filereadable(expand('~/.vimrc.source/.vimrc.yankring')) 
-  source ~/.vimrc.source/.vimrc.yankring
-endif
+"if filereadable(expand('~/.vimrc.source/.vimrc.vundle')) 
+"  source ~/.vimrc.source/.vimrc.vundle
+"endif
+"if filereadable(expand('~/.vimrc.source/.vimrc.netrw')) 
+"  source ~/.vimrc.source/.vimrc.netrw
+"endif
+"if filereadable(expand('~/.vimrc.source/.vimrc.vimfiler')) 
+"  source ~/.vimrc.source/.vimrc.vimfiler
+"endif
+"if filereadable(expand('~/.vimrc.source/.vimrc.visualstar')) 
+"  source ~/.vimrc.source/.vimrc.visualstar
+"endif
+"if filereadable(expand('~/.vimrc.source/.vimrc.yankring')) 
+"  source ~/.vimrc.source/.vimrc.yankring
+"endif
 
 syntax on
 set enc=utf-8
@@ -47,7 +50,7 @@ set showcmd
 " :ls時に最後に開いた場所にカーソルを戻す
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " ヤンク後に何度pしても置き換わらないようにする
-vnoremap <silent> <C-p> "0p<CR>
+" vnoremap <silent> <C-p> "0p<CR>
 " ペースト直後のテキストをすぐに選択する
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " ヤンクした文字列とカーソル位置の文字列を置換する
