@@ -1,3 +1,8 @@
+umask 0002 
+eval "$(hub alias -s)" # bash
+
+#alias vim='/usr/local/bin/vim'
+
 if [ "$TERM" = "screen-bce" ]; then
     # ディレクトリ名を表示する場合
     PROMPT_COMMAND='echo -ne "\033]0;$(whoami)@$(hostname):$(pwd)\007"'
@@ -11,4 +16,5 @@ else
     PS1='[\u \W]\\$ '
     #PS1='[\u@\h \W]\\$ '
 fi
+
 

@@ -1,43 +1,43 @@
+# brew
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+
+# the order of priority 
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=$HOME/.nodebrew/current/bin:$PATH
+
 JAVA_HOME=$(/usr/libexec/java_home)
-#JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 export JAVA_HOME
-PATH=${JAVA_HOME}/bin:$PATH
+export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
+#PATH=${JAVA_HOME}/bin:$PATH
 
-ANT_HOME=/usr/local/apache-ant-1.8.3
-export ANT_HOME
-PATH=${ANT_HOME}/bin:$PATH
-
-M2_HOME=/usr/local/apache-maven
-export M2_HOME
-PATH=${M2_HOME}/bin:$PATH
-
-TOMCAT_HOME=/usr/local/apache-tomcat
+TOMCAT_HOME=/usr/local/Cellar/tomcat/home
 export TOMCAT_HOME
-PATH=${TOMCAT_HOME}/bin:$PATH
 
-ANDROID_HOME=/usr/local/android-sdk-macosx
+ANDROID_HOME=/usr/local/Cellar/android-sdk/22.6.2
 export ANDROID_HOME
-PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
+#ANDROID_HOME=/usr/local/android-sdk-macosx
+#export ANDROID_HOME
+#PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
 
-PLAY_HOME=/usr/local/play
-export PLAY_HOME
-PATH=${PLAY_HOME}:$PATH
+#PLAY_HOME=/usr/local/play
+#export PLAY_HOME
+#PATH=${PLAY_HOME}:$PATH
 
-AWS_AUTO_SCALING_HOME=/usr/local/AutoScaling
-export AWS_AUTO_SCALING_HOME 
-PATH=${AWS_AUTO_SCALING_HOME}/bin:$PATH
+#AWS_AUTO_SCALING_HOME=/usr/local/AutoScaling
+#export AWS_AUTO_SCALING_HOME 
+#PATH=${AWS_AUTO_SCALING_HOME}/bin:$PATH
 
-PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH
-
-
-export MANPATH=/opt/local/man:$MANPATH
+#export MANPATH=/opt/local/man:$MANPATH
 export DISPLAY=:0.0
 
-export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
+
+if [ -e ~/.rbenv ] ; then
+#  PATH=${HOME}/.rbenv/shims:$PATH 
+  eval "$(rbenv init -)"
+fi
 
 export SCREENDIR=~/.screens
-export SVN_EDITOR=/opt/local/bin/vim
+export SVN_EDITOR=/usr/local/bin/vim
 
 if [ -f ~/.bashrc ] ; then
     source ~/.bashrc

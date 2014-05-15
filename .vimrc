@@ -1,28 +1,33 @@
-if filereadable(expand('~/.vimrc.source/.vimrc.neobundle')) 
-  source ~/.vimrc.source/.vimrc.neobundle
-endif
-"if filereadable(expand('~/.vimrc.source/.vimrc.vundle')) 
-"  source ~/.vimrc.source/.vimrc.vundle
-"endif
-"if filereadable(expand('~/.vimrc.source/.vimrc.netrw')) 
-"  source ~/.vimrc.source/.vimrc.netrw
-"endif
-"if filereadable(expand('~/.vimrc.source/.vimrc.vimfiler')) 
-"  source ~/.vimrc.source/.vimrc.vimfiler
-"endif
-"if filereadable(expand('~/.vimrc.source/.vimrc.visualstar')) 
-"  source ~/.vimrc.source/.vimrc.visualstar
-"endif
-"if filereadable(expand('~/.vimrc.source/.vimrc.yankring')) 
-"  source ~/.vimrc.source/.vimrc.yankring
-"endif
-
 syntax on
 set enc=utf-8
 set fenc=utf-8
 set fencs=iso-2022,utf-8,euc-jp,cp932
 set ambiwidth=double
 set number
+" vi非互換にする
+set nocompatible
+if filereadable(expand('~/.vimrc.include/.vimrc.neobundle')) 
+  source ~/.vimrc.include/.vimrc.neobundle
+endif
+if filereadable(expand('~/.vimrc.include/.vimrc.neocomplete')) 
+  source ~/.vimrc.include/.vimrc.neocomplete
+endif
+"if filereadable(expand('~/.vimrc.include/.vimrc.vundle')) 
+"  source ~/.vimrc.include/.vimrc.vundle
+"endif
+"if filereadable(expand('~/.vimrc.include/.vimrc.netrw')) 
+"  source ~/.vimrc.include/.vimrc.netrw
+"endif
+"if filereadable(expand('~/.vimrc.include/.vimrc.vimfiler')) 
+"  source ~/.vimrc.include/.vimrc.vimfiler
+"endif
+"if filereadable(expand('~/.vimrc.include/.vimrc.visualstar')) 
+"  source ~/.vimrc.include/.vimrc.visualstar
+"endif
+"if filereadable(expand('~/.vimrc.include/.vimrc.yankring')) 
+"  source ~/.vimrc.include/.vimrc.yankring
+"endif
+
 "タブの代わりに空白文字を挿入する
 set expandtab
 set softtabstop=0
@@ -36,6 +41,8 @@ set tabstop=4
 set shiftwidth=4
 " 対応したカッコを表示する
 set showmatch
+" 挿入モードでbs,del,C-hで削除
+set backspace=indent,eol,start
 " 入力と同時に検索
 set incsearch
 " 検索時にハイライトするがESC二度押しで解除
@@ -46,7 +53,7 @@ set formatoptions+=mM
 " コマンドをステータス行に表示
 set showcmd
 " yank時のデフォルトをクリップボードにする
-" set clipboard+=unnamed
+set clipboard+=unnamed
 " :ls時に最後に開いた場所にカーソルを戻す
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " ヤンク後に何度pしても置き換わらないようにする
@@ -65,10 +72,51 @@ autocmd FileType make setlocal noexpandtab
 "let g:xml_syntax_folding=1
 "au FileType xml setlocal foldmethod=syntax
 
+" コメント改行時の自動挿入解除
+:setlocal formatoptions-=ro
+
 " %でのジャンプ機能を拡張
 :runtime macros/matchit.vim
 :let b:match_ignorecase = 1
-:let b:match_words="\/*:*\/"
+:let b:match_words="def:end"
+
+" 画面分割・タブページ
+nnoremap s <Nop>
+
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sn gt
+nnoremap sp gT
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+
+call submode#enter_with('bufmove', 'n', '', 's.', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's,', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '.', '<C-w>>')
+call submode#map('bufmove', 'n', '', ',', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 set t_Co=256
 colorscheme desert

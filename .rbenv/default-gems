@@ -1,0 +1,7 @@
+bundler ~>1.7.0
+pry
+pry-doc
+pry-stack_explorer
+pry-byebug
+refe2
+rubocop
