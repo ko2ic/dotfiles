@@ -45,17 +45,17 @@ NeoBundleLazy 'basyura/unite-rails', {
       \   ]
       \ }}
 
-NeoBundleLazy 'alpaca-tc/neorspec.vim', {
-      \ 'depends' : ['alpaca-tc/vim-rails', 'tpope/vim-dispatch'],
-      \ 'autoload' : {
-      \   'commands' : ['RSpec', 'RSpecAll', 'RSpecCurrent', 'RSpecNearest', 'RSpecRetry']
-      \ }}
-
-NeoBundleLazy 'alpaca-tc/alpaca_tags', {
-      \ 'depends': 'Shougo/vimproc',
-      \ 'autoload' : {
-      \   'commands': ['TagsUpdate', 'TagsSet', 'TagsBundle']
-      \ }}
+"NeoBundleLazy 'alpaca-tc/neorspec.vim', {
+"      \ 'depends' : ['alpaca-tc/vim-rails', 'tpope/vim-dispatch'],
+"      \ 'autoload' : {
+"      \   'commands' : ['RSpec', 'RSpecAll', 'RSpecCurrent', 'RSpecNearest', 'RSpecRetry']
+"      \ }}
+"
+"NeoBundleLazy 'alpaca-tc/alpaca_tags', {
+"      \ 'depends': 'Shougo/vimproc',
+"      \ 'autoload' : {
+"      \   'commands': ['TagsUpdate', 'TagsSet', 'TagsBundle']
+"      \ }}
 
 " Required:
 filetype plugin indent on
