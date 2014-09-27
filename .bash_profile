@@ -42,4 +42,4 @@ export SVN_EDITOR=/usr/local/bin/vim
 if [ -f ~/.bashrc ] ; then
     source ~/.bashrc
 fi
-function gi() { curl https://www.gitignore.io/api/$@ ;}
+

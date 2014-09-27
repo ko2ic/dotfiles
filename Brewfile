@@ -30,6 +30,7 @@ install ag
 install lua
 install ctags
 install wireshark --with-qt
+install sqlite
 
 ## Java
 install tomcat
