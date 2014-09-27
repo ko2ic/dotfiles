@@ -54,7 +54,6 @@ endif
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
-
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1"  
 "  " Tell Neosnippet about the other snippets
@@ -95,6 +94,13 @@ let g:user_emmet_settings = {
 
 " wordを決まったwordに変換するPlugin
 NeoBundle 'AndrewRadev/switch.vim'
+
+" ディレクトリ構造をtree表示するPlugin
+NeoBundle 'scrooloose/nerdtree'
+autocmd VimEnter * execute 'NERDTree'
+
+" vimからDBを扱うPlugin
+NeoBundle 'vim-scripts/dbext.vim'
 
 call neobundle#end()
 
