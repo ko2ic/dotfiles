@@ -1,8 +1,6 @@
 umask 0002 
 eval "$(hub alias -s)" # bash
 
-#alias vim='/usr/local/bin/vim'
-
 if [ "$TERM" = "screen-bce" ]; then
     # ディレクトリ名を表示する場合
     PROMPT_COMMAND='echo -ne "\033]0;$(whoami)@$(hostname):$(pwd)\007"'
@@ -17,10 +15,14 @@ else
     #PS1='[\u@\h \W]\\$ '
 fi
 
+#alias vim='/usr/local/bin/vim'
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 function gi() { curl https://www.gitignore.io/api/$@ ;}
 
-function rails_new(){
+function rails_new() {
 
     while read -p "Please enter project name: " railsName ; do
         if [ -n "$railsName" ] ; then

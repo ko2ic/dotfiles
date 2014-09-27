@@ -53,7 +53,7 @@ brew install rbenv-gemset
 
 ## Editor
 brew install vim --with-lua
-#install macvim --override-system-vim --with-lua
+brew install macvim --with-cscope --with-lua --HEAD
 
 ## Git
 brew install git
@@ -85,7 +85,7 @@ brew cask install atom
 brew cask install alfred
 
 brew cask alfred link
-
+brew linkapps
 # Remove outdated versions
 brew cleanup
 brew cask cleanup

@@ -30,7 +30,6 @@ export ANDROID_HOME
 #export MANPATH=/opt/local/man:$MANPATH
 export DISPLAY=:0.0
 
-
 if [ -e ~/.rbenv ] ; then
 #  PATH=${HOME}/.rbenv/shims:$PATH 
   eval "$(rbenv init -)"
