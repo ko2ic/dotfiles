@@ -24,6 +24,7 @@ NeoBundle 'Shougo/unite.vim'
 
 " colorscheme集
 NeoBundle 'flazz/vim-colorschemes'
+
 " 非同期処理を実施するために必要なvim用のplugin(環境ごとに自動build)
 NeoBundle 'Shougo/vimproc', {
           \ 'build' : {
@@ -35,8 +36,10 @@ NeoBundle 'Shougo/vimproc', {
           \ }
 " ファイルを検索して開くためのplugin
 NeoBundle 'kien/ctrlp.vim'
+
 " vim内でshellを動作させるplugin
 NeoBundle 'Shougo/vimshell'
+
 " vim上でgit操作するplugin
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv.git'
@@ -84,6 +87,7 @@ let g:user_emmet_settings = {
 \ 'lang' : 'ja'
 \}
 
+NeoBundle 'AndrewRadev/switch.vim'
 
 call neobundle#end()
 
