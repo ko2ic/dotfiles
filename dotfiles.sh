@@ -25,6 +25,9 @@ do
         ln -Fis "$PWD/$vimfile" $HOME
 done
 
+echo '.screenrc' 
+ln -Fis "$PWD/.screenrc" $HOME
+
 if [ ! -e ~/.screens ]
 then
     (mkdir ~/.screens>/dev/null 2>&1 && chmod 700 ~/.screens) || (echo "fail in settings of screen atachment after restarting" && rm -d ~/.screens>/dev/null 2>&1)
