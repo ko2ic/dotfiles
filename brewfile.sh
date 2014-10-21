@@ -11,8 +11,8 @@ brew tap homebrew/dupes
 brew tap thoughtbot/formulae
 
 #brew tap caskroom/homebrew-cask
-brew install caskroom/homebrew-cask
 brew tap caskroom/versions
+brew install caskroom/cask/brew-cask
 
 # Packages
 
@@ -73,7 +73,6 @@ brew install docker
 brew install packer
 
 # Casks
-brew install brew-cask
 brew cask install java
 brew cask install google-chrome
 brew cask install iterm2
