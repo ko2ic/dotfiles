@@ -8,8 +8,13 @@
 .DS_Store
 *.swp
 *.svn
+
+#########vim############
 .vim/.netrwhist
 .vim/bundle/
+.vim/ftplugin/bundle/
+.vim/ftplugin/ftplugin
+.vim/ftplugin/.netrwhist
 #########Android############
 # built application files
 *.apk

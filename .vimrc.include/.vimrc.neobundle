@@ -95,9 +95,18 @@ let g:user_emmet_settings = {
 " wordを決まったwordに変換するPlugin
 NeoBundle 'AndrewRadev/switch.vim'
 
+" vimからagを利用できるようにするPlugin
+NeoBundle 'rking/ag.vim'
+
 " ディレクトリ構造をtree表示するPlugin
 NeoBundle 'scrooloose/nerdtree'
-autocmd VimEnter * execute 'NERDTree'
+" autocmd VimEnter * execute 'NERDTree'
+" F2でtree表示/非表示にする
+nnoremap <f2> :NERDTreeToggle<CR>
+""tree表示だけの場合は一緒に閉じる
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" 不可視ファイルをデファルトで表示
+let NERDTreeShowHidden = 1
 
 " vimからDBを扱うPlugin
 NeoBundle 'vim-scripts/dbext.vim'
