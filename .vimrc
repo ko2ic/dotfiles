@@ -75,6 +75,9 @@ autocmd FileType make setlocal noexpandtab
 " コメント改行時の自動挿入解除
 :setlocal formatoptions-=ro
 
+" ctrl + a ,(x)のカウントアップ(ダウン)を10進数にする
+:set nrformats=
+
 " %でのジャンプ機能を拡張
 :runtime macros/matchit.vim
 :let b:match_ignorecase = 1

@@ -108,6 +108,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " 不可視ファイルをデファルトで表示
 let NERDTreeShowHidden = 1
 
+" 日付をインクリメントしたら、数値をまとめてインクリメントしたりするPlugin
+NeoBundle 'tpope/vim-speeddating'
+
 " vimからDBを扱うPlugin
 NeoBundle 'vim-scripts/dbext.vim'
 
