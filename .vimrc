@@ -77,6 +77,10 @@ autocmd FileType make setlocal noexpandtab
 
 " ctrl + a ,(x)のカウントアップ(ダウン)を10進数にする
 :set nrformats=
+" ctagsが見つかるまで探す
+if has('path_extra')
+    set tags+=tags;
+endif
 
 " %でのジャンプ機能を拡張
 :runtime macros/matchit.vim
