@@ -58,9 +58,11 @@ brew install macvim --with-cscope --with-lua --HEAD
 ## Git
 brew install git
 brew install gitsh
-brew install gist
 brew install tig
 brew install gibo
+
+## Gist/Github
+brew install gist
 brew install hub
 
 ## Heroku
