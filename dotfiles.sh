@@ -18,11 +18,12 @@ do
         if [ $vimfile == '.vim' ]
         then
            echo "$vimfile/ftplugin"
-           ln -Fis "$PWD/.vim/ftplugin" "$HOME/.vim"
+           ln -Fis "$PWD/.vim/after" "$HOME/.vim/after"
            break
-        fi
-        echo $vimfile
-        ln -Fis "$PWD/$vimfile" $HOME
+        else 
+           echo $vimfile
+           ln -Fis "$PWD/$vimfile" $HOME0
+        fi   
 done
 
 echo '.screenrc' 
