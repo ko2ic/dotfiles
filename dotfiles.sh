@@ -15,16 +15,16 @@ do
 done
 for vimfile in \.vim?* \.vim
 do
+        echo $vimfile
         if [ $vimfile == '.vim' ]
         then
-           echo "$vimfile/ftplugin"
-           ln -Fis "$PWD/.vim/after" "$HOME/.vim/after"
+           ln -Fis "$PWD/.vim/" "$HOME/.vim"
            break
         else 
-           echo $vimfile
-           ln -Fis "$PWD/$vimfile" $HOME0
+           ln -Fis "$PWD/$vimfile" $HOME
         fi   
 done
+rm -f $HOME/.vim/.vim
 
 echo '.screenrc' 
 ln -Fis "$PWD/.screenrc" $HOME
