@@ -1,8 +1,8 @@
 # Make sure using latest Homebrew
-brew update
+brew update 
 
 # Update already-installed formula
-brew upgrade
+#brew upgrade --all
 
 # Add Repository
 brew tap homebrew/versions
@@ -30,15 +30,17 @@ brew install nmap
 brew install ag
 brew install lua
 brew install ctags
-brew install wireshark --with-qt
+#brew install wireshark --with-qt
 brew install sqlite
 
 ## Java
+brew cask install java
 brew install tomcat
 brew install maven
 brew install gradle
 brew install groovy
 brew install android-sdk
+brew cask install android-studio
 
 ## Scala
 brew install typesafe-activator
@@ -75,7 +77,6 @@ brew install docker
 brew install packer
 
 # Casks
-brew cask install java
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install dropbox
@@ -85,7 +86,6 @@ brew cask install skype
 brew cask install atom
 brew cask install alfred
 
-brew cask alfred link
 brew linkapps
 # Remove outdated versions
 brew cleanup
