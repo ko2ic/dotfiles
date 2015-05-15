@@ -9,6 +9,7 @@ brew tap homebrew/versions
 brew tap homebrew/binary
 brew tap homebrew/dupes
 brew tap thoughtbot/formulae
+brew tap aspnet/dnx
 
 #brew tap caskroom/homebrew-cask
 brew tap caskroom/versions
@@ -52,6 +53,10 @@ brew install readline
 brew install ruby-build
 brew install rbenv
 brew install rbenv-gemset
+
+## C#
+brew install dnvm 
+#brew install xsp
 
 ## Editor
 brew install vim --with-lua

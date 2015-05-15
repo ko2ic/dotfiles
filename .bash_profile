@@ -25,6 +25,11 @@ export TOMCAT_HOME
 #export AWS_AUTO_SCALING_HOME 
 #PATH=${AWS_AUTO_SCALING_HOME}/bin:$PATH
 
+export DNX_FEED=https://www.nuget.org/api/v2
+source dnvm.sh
+export MONO_MANAGED_WATCHER=false
+#export MONO_GAC_PREFIX="/usr/local/opt/mono/lib/mono/gac/"
+
 #export MANPATH=/opt/local/man:$MANPATH
 export DISPLAY=:0.0
 
