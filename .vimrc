@@ -6,6 +6,8 @@ set ambiwidth=double
 set number
 " vi非互換にする
 set nocompatible
+" コマンドモードの補完
+set wildmode=longest:full,list
 if filereadable(expand('~/.vimrc.include/.vimrc.neobundle')) 
   source ~/.vimrc.include/.vimrc.neobundle
 endif
