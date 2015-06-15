@@ -54,6 +54,9 @@ brew install ruby-build
 brew install rbenv
 brew install rbenv-gemset
 
+## JavaScript
+brew install nodebrew
+
 ## C#
 brew install dnvm 
 #brew install xsp
