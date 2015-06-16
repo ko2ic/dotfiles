@@ -50,6 +50,9 @@ if has("lua")
        \ }}
 endif
 
+" JSDoc生成用
+NeoBundleLazy 'heavenshell/vim-jsdoc' , {'autoload': {'filetypes': ['javascript']}}
+
 " 言語用のsnippet plugin
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'

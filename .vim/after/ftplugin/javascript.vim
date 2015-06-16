@@ -9,12 +9,16 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" JSDocを生成(<C-l>) ここだと動作しない
+"NeoBundle "heavenshell/vim-jsdoc"
+
 " node.js用(vim-railsのnode版)
 NeoBundle 'moll/vim-node'
 
 " jsの補完
 NeoBundle 'mattn/jscomplete-vim'
 let g:jscomplete_use = ['dom', 'moz', 'es6th']
+
 " node.jsの補完
 NeoBundle 'myhere/vim-nodejs-complete'
 :setl omnifunc=jscomplete#CompleteJS

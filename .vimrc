@@ -145,5 +145,3 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 set t_Co=256
 colorscheme desert
-
-
