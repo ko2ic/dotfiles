@@ -1,23 +1,23 @@
 filetype off
 
-if has('vim_starting')
-  " vim起動時 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+"if has('vim_starting')
+"  " vim起動時 
+"  " Required:
+"  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"endif
 
-NeoBundleLazy 'nosami/Omnisharp', {
-\   'autoload': {'filetypes': ['cs']},
-\   'build': {
-\     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-\     'mac': 'xbuild server/OmniSharp.sln',
-\     'unix': 'xbuild server/OmniSharp.sln',
-\   }
-\ }
-
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'kien/ctrlp.vim'
+"NeoBundleLazy 'nosami/Omnisharp', {
+"\   'autoload': {'filetypes': ['cs']},
+"\   'build': {
+"\     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+"\     'mac': 'xbuild server/OmniSharp.sln',
+"\     'unix': 'xbuild server/OmniSharp.sln',
+"\   }
+"\ }
+"
+"NeoBundle 'tpope/vim-dispatch'
+"NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'kien/ctrlp.vim'
 
 " OmniSharp won't work without this setting
 filetype plugin on
@@ -135,5 +135,5 @@ filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-NeoBundleCheck
+"NeoBundleCheck
 

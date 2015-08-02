@@ -10,6 +10,7 @@ brew tap homebrew/binary
 brew tap homebrew/dupes
 brew tap thoughtbot/formulae
 brew tap aspnet/dnx
+#brew tap homebrew/boneyard
 
 #brew tap caskroom/homebrew-cask
 brew tap caskroom/versions
@@ -44,9 +45,9 @@ brew install android-sdk
 brew cask install android-studio
 
 ## Scala
+brew install scala
+brew install sbt
 brew install typesafe-activator
-#install scala
-#install play
 
 ## ruby
 brew install readline
@@ -83,6 +84,9 @@ brew cask install vagrant
 brew cask install virtualbox
 brew install docker
 brew install packer
+
+## private
+#brew install exiftool
 
 # Casks
 brew cask install google-chrome
