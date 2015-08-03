@@ -83,6 +83,8 @@ autocmd FileType make setlocal noexpandtab
 if has('path_extra')
     set tags+=tags;
 endif
+" tagsジャンプの時に複数ある時は一覧表示                                        
+nnoremap <C-]> g<C-]> 
 
 " %でのジャンプ機能を拡張
 :runtime macros/matchit.vim
