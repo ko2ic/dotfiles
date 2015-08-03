@@ -115,6 +115,13 @@ nnoremap <f2> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " 不可視ファイルをデファルトで表示
 let NERDTreeShowHidden = 1
+" タグリストを表示するPlugin
+NeoBundleLazy "majutsushi/tagbar", {
+      \ "autoload": { "commands": ["TagbarToggle"] }}
+let g:tlist_js_settings = 'javascript;f:function;v:variable'
+if ! empty(neobundle#get("tagbar"))
+  nmap <F8> :TagbarToggle<CR>
+endif
 
 " 日付をインクリメントしたら、数値をまとめてインクリメントしたりするPlugin
 NeoBundle 'tpope/vim-speeddating'
@@ -124,7 +131,6 @@ NeoBundle 'vim-scripts/dbext.vim'
 
 " JSDocを生成(<C-l>) 
 NeoBundleLazy 'heavenshell/vim-jsdoc' , {'autoload': {'filetypes': ['javascript']}}
-
 
 " Ruby 用
 
