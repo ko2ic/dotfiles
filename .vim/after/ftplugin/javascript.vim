@@ -10,29 +10,31 @@ if has('vim_starting')
 endif
 
 " JSDocを生成(<C-l>) ここだと動作しない
-"NeoBundle "heavenshell/vim-jsdoc"
+"NeoBundle 'heavenshell/vim-jsdoc'
 
 " node.js用(vim-railsのnode版)
-NeoBundle 'moll/vim-node'
+"NeoBundle 'moll/vim-node'
 
 " jsの補完
-NeoBundle 'mattn/jscomplete-vim'
-let g:jscomplete_use = ['dom', 'moz', 'es6th']
+" TODO neobundleに追従していないためコメント
+"NeoBundle 'mattn/jscomplete-vim'
+"let g:jscomplete_use = ['dom', 'moz', 'es6th']
 
 " node.jsの補完
-NeoBundle 'myhere/vim-nodejs-complete'
-:setl omnifunc=jscomplete#CompleteJS
-if !exists('g:neocomplcache_omni_functions')
-  let g:neocomplcache_omni_functions = {}
-endif
-let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
+" TODO neobundleに追従していないためコメント
+"NeoBundle 'myhere/vim-nodejs-complete'
+":setl omnifunc=jscomplete#CompleteJS
+"if !exists('g:neocomplcache_omni_functions')
+"  let g:neocomplcache_omni_functions = {}
+"endif
+"let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
 
-let g:node_usejscomplete = 1
+"let g:node_usejscomplete = 1
 
 " js用のインデント
-NeoBundle 'pangloss/vim-javascript'
+"NeoBundle 'pangloss/vim-javascript'
 " jsプログラムのシンタックスハイライトを変更
-NeoBundle 'jelera/vim-javascript-syntax'
+"NeoBundle 'jelera/vim-javascript-syntax'
 
 " Required:
 filetype plugin indent on
