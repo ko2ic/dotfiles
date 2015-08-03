@@ -125,6 +125,9 @@ NeoBundle 'vim-scripts/dbext.vim'
 " JSDocを生成(<C-l>) 
 NeoBundleLazy 'heavenshell/vim-jsdoc' , {'autoload': {'filetypes': ['javascript']}}
 
+
+" Ruby 用
+
 " refを参照できるようにするPlugin
 NeoBundleLazy 'yuku-t/vim-ref-ri', {
       \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
