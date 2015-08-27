@@ -111,7 +111,9 @@ NeoBundle 'scrooloose/nerdtree'
 " autocmd VimEnter * execute 'NERDTree'
 " F2でtree表示/非表示にする
 nnoremap <f2> :NERDTreeToggle<CR>
-""tree表示だけの場合は一緒に閉じる
+" currentファイルの場所に移動
+nnoremap <C-g><C-g> :NERDTreeFind<CR>
+" tree表示だけの場合は一緒に閉じる
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " 不可視ファイルをデファルトで表示
 let NERDTreeShowHidden = 1
