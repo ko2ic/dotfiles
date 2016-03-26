@@ -29,12 +29,16 @@ brew install tree
 brew install openssl
 brew install nkf
 brew install nmap
+brew link autoconf automake
 brew install ag
 brew install lua
 brew install ctags
 #brew install wireshark --with-qt
 brew install sqlite
 brew install tika
+
+## db
+#brew install mysql
 
 ## Java
 brew cask install java
@@ -51,10 +55,15 @@ brew cask install android-studio
 #brew install typesafe-activator
 
 ## ruby
+brew link autoconf
 brew install readline
 brew install ruby-build
 brew install rbenv
 brew install rbenv-gemset
+# for ruby-filemagic
+#brew install libmagic
+# for rmagic
+#brew install imagemagick
 
 ## JavaScript
 brew install nodebrew
@@ -62,6 +71,9 @@ brew install nodebrew
 ## C#
 #brew install dnvm 
 #brew install xsp
+
+## Swift
+brew install swiftlint
 
 ## Editor
 brew install vim --with-lua
