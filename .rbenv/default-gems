@@ -1,4 +1,4 @@
-bundler ~>1.7.0
+bundler
 pry
 pry-doc
 pry-stack_explorer
