@@ -34,20 +34,21 @@ brew install lua
 brew install ctags
 #brew install wireshark --with-qt
 brew install sqlite
+brew install tika
 
 ## Java
 brew cask install java
-brew install tomcat
-brew install maven
+#brew install tomcat
+#brew install maven
 brew install gradle
-brew install groovy
+#brew install groovy
 brew install android-sdk
 brew cask install android-studio
 
 ## Scala
-brew install scala
-brew install sbt
-brew install typesafe-activator
+#ibrew install scala
+#brew install sbt
+#brew install typesafe-activator
 
 ## ruby
 brew install readline
@@ -59,7 +60,7 @@ brew install rbenv-gemset
 brew install nodebrew
 
 ## C#
-brew install dnvm 
+#brew install dnvm 
 #brew install xsp
 
 ## Editor
@@ -69,7 +70,7 @@ brew install macvim --with-cscope --with-lua --HEAD
 ## Git
 brew install git
 brew install gitsh
-brew install tig
+#brew install tig
 brew install gibo
 
 ## Gist/Github
@@ -77,13 +78,13 @@ brew install gist
 brew install hub
 
 ## Heroku
-brew install heroku-toolbelt
+#brew install heroku-toolbelt
 
 ## DevOpt
 brew cask install vagrant
 brew cask install virtualbox
-brew install docker
-brew install packer
+#brew install docker
+#brew install packer
 
 ## private
 #brew install exiftool
