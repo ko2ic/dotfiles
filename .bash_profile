@@ -25,10 +25,10 @@ export TOMCAT_HOME
 #export AWS_AUTO_SCALING_HOME 
 #PATH=${AWS_AUTO_SCALING_HOME}/bin:$PATH
 
-export DNX_FEED=https://www.nuget.org/api/v2
-source dnvm.sh
-export MONO_MANAGED_WATCHER=false
-export MONO_GAC_PREFIX=/usr/local/opt/mono/lib/mono/gac
+#export DNX_FEED=https://www.nuget.org/api/v2
+#source dnvm.sh
+#export MONO_MANAGED_WATCHER=false
+#export MONO_GAC_PREFIX=/usr/local/opt/mono/lib/mono/gac
 # gacutil /i /usr/local/opt/xsp/lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll -gacdir /usr/local/opt/mono/lib/mono/gac
 # gacutil /i /usr/local/opt/xsp/lib/mono/gac/xsp4/3.0.0.0__0738eb9f132ed756/xsp4.exe -gacdir /usr/local/opt/mono/lib/mono/gac
 
