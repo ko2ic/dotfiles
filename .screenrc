@@ -18,4 +18,5 @@ hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gW} %-w%{= wk}%n %t%{-}%+w %
 defbce on
 attrcolor b ".I"
 autodetach on
+ignorecase off
 termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
