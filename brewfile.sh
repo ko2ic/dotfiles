@@ -14,7 +14,7 @@ brew tap aspnet/dnx
 
 #brew tap caskroom/homebrew-cask
 brew tap caskroom/versions
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 
 # Packages
 
@@ -73,6 +73,7 @@ brew install nodebrew
 #brew install xsp
 
 ## Swift
+brew install xctool 
 brew install swiftlint
 
 ## Editor
