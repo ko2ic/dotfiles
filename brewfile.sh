@@ -37,6 +37,7 @@ brew install ctags
 brew install sqlite
 brew install tika
 brew install libjpeg zlib
+brew install jq
 
 ## db
 #brew install mysql

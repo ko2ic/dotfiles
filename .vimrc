@@ -107,6 +107,7 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+
 " 画面分割・タブページ
 nnoremap s <Nop>
 
