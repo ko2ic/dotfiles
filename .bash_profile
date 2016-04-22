@@ -32,13 +32,18 @@ export TOMCAT_HOME
 # gacutil /i /usr/local/opt/xsp/lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll -gacdir /usr/local/opt/mono/lib/mono/gac
 # gacutil /i /usr/local/opt/xsp/lib/mono/gac/xsp4/3.0.0.0__0738eb9f132ed756/xsp4.exe -gacdir /usr/local/opt/mono/lib/mono/gac
 
-#export MANPATH=/opt/local/man:$MANPATH
-export DISPLAY=:0.0
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 if [ -e ~/.rbenv ] ; then
 #  PATH=${HOME}/.rbenv/shims:$PATH 
   eval "$(rbenv init -)"
 fi
+
+#export MANPATH=/opt/local/man:$MANPATH
+export DISPLAY=:0.0
 
 export SCREENDIR=~/.screens
 export SVN_EDITOR=/usr/local/bin/vim

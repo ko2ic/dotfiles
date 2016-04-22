@@ -36,6 +36,7 @@ brew install ctags
 #brew install wireshark --with-qt
 brew install sqlite
 brew install tika
+brew install libjpeg zlib
 
 ## db
 #brew install mysql
@@ -67,6 +68,9 @@ brew install rbenv-gemset
 
 ## JavaScript
 brew install nodebrew
+
+## Python
+brew install pyenv-virtualenv
 
 ## C#
 #brew install dnvm 
