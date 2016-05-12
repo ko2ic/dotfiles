@@ -80,6 +80,7 @@ brew install pyenv-virtualenv
 ## Swift
 brew install xctool 
 brew install swiftlint
+brew install kylef/formulae/swiftenv
 
 ## Editor
 brew install vim --with-lua
