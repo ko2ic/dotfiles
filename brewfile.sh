@@ -49,7 +49,7 @@ brew cask install java
 brew install gradle
 #brew install groovy
 brew install android-sdk
-brew cask install android-studio
+brew install Caskroom/cask/android-studio
 
 ## Scala
 #ibrew install scala
@@ -100,8 +100,8 @@ brew install hub
 #brew install heroku-toolbelt
 
 ## DevOpt
-brew cask install vagrant
-brew cask install virtualbox
+brew install Caskroom/cask/vagrant
+brew install Caskroom/cask/virtualbox
 #brew install docker
 #brew install packer
 
@@ -109,14 +109,14 @@ brew cask install virtualbox
 #brew install exiftool
 
 # Casks
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install dropbox
-brew cask install kobito
-brew cask install divvy
-brew cask install skype
-brew cask install atom
-brew cask install alfred
+brew install Caskroom/cask/skype
+brew install Caskroom/cask/google-chrome
+brew install Caskroom/cask/iterm2
+brew install Caskroom/cask/dropbox
+brew install Caskroom/cask/kobito
+brew install Caskroom/cask/divvy
+brew install Caskroom/cask/atom
+brew install Caskroom/cask/alfred
 
 brew linkapps
 # Remove outdated versions
