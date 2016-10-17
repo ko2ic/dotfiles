@@ -39,6 +39,9 @@ brew install tika
 brew install libjpeg zlib
 brew install jq
 
+## shell
+brew install fish
+
 ## db
 #brew install mysql
 
@@ -80,6 +83,7 @@ brew install pyenv-virtualenv
 ## Swift
 brew install xctool 
 brew install swiftlint
+brew install carthage
 brew install kylef/formulae/swiftenv
 
 ## Editor
