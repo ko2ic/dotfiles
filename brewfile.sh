@@ -46,13 +46,13 @@ brew install fish
 #brew install mysql
 
 ## Java
-brew cask install java
+#brew cask install java
 #brew install tomcat
 #brew install maven
-brew install gradle
+#brew install gradle
 #brew install groovy
-brew install android-sdk
-brew install Caskroom/cask/android-studio
+#brew install android-sdk
+#brew install Caskroom/cask/android-studio
 
 ## Scala
 #ibrew install scala
