@@ -5,9 +5,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$HOME/.nodebrew/current/bin:$PATH
 
-JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA_HOME
-export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
+#JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME
 
 ANDROID_HOME=/usr/local/opt/android-sdk
 export ANDROID_HOME
@@ -62,3 +61,7 @@ if [ -f ~/.bashrc ] ; then
     source ~/.bashrc
 fi
 
+export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
