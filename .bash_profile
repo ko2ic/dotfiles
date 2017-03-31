@@ -2,7 +2,7 @@
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 
 # the order of priority 
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$HOME/.nodebrew/current/bin:$PATH
 
 JAVA_HOME=$(/usr/libexec/java_home)
