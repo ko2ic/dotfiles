@@ -38,6 +38,7 @@ brew install sqlite
 brew install tika
 brew install libjpeg zlib
 brew install jq
+brew install mitmproxy
 
 ## shell
 brew install fish
