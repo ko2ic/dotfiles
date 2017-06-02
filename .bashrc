@@ -82,6 +82,3 @@ EOS
 
 }
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/ko2ic/.sdkman"
-[[ -s "/Users/ko2ic/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ko2ic/.sdkman/bin/sdkman-init.sh"
