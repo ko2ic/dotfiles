@@ -38,6 +38,7 @@ brew install sqlite
 brew install tika
 brew install libjpeg zlib
 brew install jq
+brew install mitmproxy
 
 ## shell
 brew install fish
@@ -119,7 +120,7 @@ brew install Caskroom/cask/iterm2
 brew install Caskroom/cask/dropbox
 brew install Caskroom/cask/kobito
 brew install Caskroom/cask/divvy
-brew install Caskroom/cask/atom
+#brew install Caskroom/cask/atom
 brew install Caskroom/cask/alfred
 
 brew linkapps
