@@ -8,10 +8,11 @@ PATH=$HOME/.nodebrew/current/bin:$PATH
 #JAVA_HOME=$(/usr/libexec/java_home)
 #export JAVA_HOME
 
-ANDROID_HOME=/usr/local/opt/android-sdk
+ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_HOME
 PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
 STUDIO_JDK=${JAVA_HOME}
+ANDROID_SDK_ROOT=$ANDROID_HOME
 
 TOMCAT_HOME=/usr/local/Cellar/tomcat/home
 export TOMCAT_HOME
@@ -65,3 +66,9 @@ export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+JAVA_HOME="$SDKMAN_DIR/candidates/java/8u144-zulu"
+export JAVA_HOME
+JDK_16="$SDKMAN_DIR/candidates/java/6u65-apple"
+JDK_17="$SDKMAN_DIR/candidates/java/7u141-zulu"
+JDK_18="$SDKMAN_DIR/candidates/java/8u144-zulu"
