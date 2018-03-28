@@ -72,3 +72,7 @@ export JAVA_HOME
 JDK_16="$SDKMAN_DIR/candidates/java/6u65-apple"
 JDK_17="$SDKMAN_DIR/candidates/java/7u141-zulu"
 JDK_18="$SDKMAN_DIR/candidates/java/8u144-zulu"
+
+# The next line updates PATH for the Google Cloud SDK.
+#if [ -f '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
+
