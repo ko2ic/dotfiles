@@ -32,6 +32,8 @@ export TOMCAT_HOME
 # gacutil /i /usr/local/opt/xsp/lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll -gacdir /usr/local/opt/mono/lib/mono/gac
 # gacutil /i /usr/local/opt/xsp/lib/mono/gac/xsp4/3.0.0.0__0738eb9f132ed756/xsp4.exe -gacdir /usr/local/opt/mono/lib/mono/gac
 
+PATH=~/Sources/dart/flutter/bin:$PATH
+PATH=~/.pub-cache/bin:$PATH
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -74,5 +76,5 @@ JDK_17="$SDKMAN_DIR/candidates/java/7u141-zulu"
 JDK_18="$SDKMAN_DIR/candidates/java/8u144-zulu"
 
 # The next line updates PATH for the Google Cloud SDK.
-#if [ -f '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
 

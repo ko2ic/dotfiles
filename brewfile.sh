@@ -11,6 +11,7 @@ brew tap homebrew/dupes
 brew tap thoughtbot/formulae
 brew tap aspnet/dnx
 #brew tap homebrew/boneyard
+brew tap dart-lang/dart
 
 #brew tap caskroom/homebrew-cask
 brew tap caskroom/versions
@@ -86,6 +87,13 @@ brew install xctool
 brew install swiftlint
 brew install carthage
 brew install kylef/formulae/swiftenv
+
+## ReactNative
+brew install yarn
+brew install watchman
+
+## Dart
+brew install dart
 
 ## Editor
 brew install vim --with-lua
