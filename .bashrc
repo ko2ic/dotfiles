@@ -15,10 +15,10 @@ else
     #PS1='[\u@\h \W]\\$ '
 fi
 
-#alias vim='/usr/local/bin/vim'
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='/usr/local/bin/vim'
+#export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+#alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 function gi() { curl https://www.gitignore.io/api/$@ ;}
 
