@@ -1,9 +1,12 @@
+export LC_ALL=ja_JP.UTF-8
+export LANG=ja_JP.UTF-8
+
 # brew
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # the order of priority 
 PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-PATH=$HOME/.nodebrew/current/bin:$PATH
+PATH=$HOME/.ndenv/bin:$PATH
 
 #JAVA_HOME=$(/usr/libexec/java_home)
 #export JAVA_HOME
@@ -42,6 +45,10 @@ if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
+if which ndenv > /dev/null; then 
+  eval "$(ndenv init -)"
+fi
+
 if [ -e ~/.rbenv ] ; then
 #  PATH=${HOME}/.rbenv/shims:$PATH 
   eval "$(rbenv init -)"
@@ -69,12 +76,14 @@ export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-JAVA_HOME="$SDKMAN_DIR/candidates/java/8u144-zulu"
+JDK_6="$SDKMAN_DIR/candidates/java/6u65-apple"
+JDK_7="$SDKMAN_DIR/candidates/java/7u141-zulu"
+JDK_8="$SDKMAN_DIR/candidates/java/8.0.181-zulu"
+JDK_12="$SDKMAN_DIR/candidates/java/12.ea.12-open"
+
+JAVA_HOME="$SDKMAN_DIR/candidates/java/8.0.181-zulu"
 export JAVA_HOME
-JDK_16="$SDKMAN_DIR/candidates/java/6u65-apple"
-JDK_17="$SDKMAN_DIR/candidates/java/7u141-zulu"
-JDK_18="$SDKMAN_DIR/candidates/java/8u144-zulu"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ishii_ko/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
 

@@ -38,6 +38,10 @@ brew install libjpeg zlib
 brew install jq
 brew install mitmproxy
 
+# GPG
+brew install gpg2
+brew install pinentry-mac
+
 ## shell
 #brew install fish
 
@@ -70,7 +74,8 @@ brew install rbenv-gemset
 #brew install imagemagick
 
 ## JavaScript
-brew install nodebrew
+#brew install nodebrew
+brew install ndenv
 
 ## Python
 brew install pyenv-virtualenv
