@@ -135,6 +135,25 @@ NeoBundle 'vim-scripts/dbext.vim'
 " JSDocを生成(<C-l>) 
 NeoBundleLazy 'heavenshell/vim-jsdoc' , {'autoload': {'filetypes': ['javascript']}}
 
+" TypeScript用
+
+" syntax hilight
+NeoBundleLazy 'leafgarland/typescript-vim', {
+\ 'autoload' : {
+\   'filetypes' : ['typescript'] }
+\}
+" indent
+NeoBundleLazy 'jason0x43/vim-js-indent', {
+\ 'autoload' : {
+\   'filetypes' : ['javascript', 'typescript', 'html'],
+\}}
+let g:js_indent_typescript = 1
+
+" 補完
+NeoBundle 'Quramy/tsuquyomi'
+
+" TypeScript用 ここまで
+
 " Ruby 用
 
 " refを参照できるようにするPlugin
