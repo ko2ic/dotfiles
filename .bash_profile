@@ -65,7 +65,6 @@ fi
 export DISPLAY=:0.0
 
 export SCREENDIR=~/.screens
-export SVN_EDITOR=/usr/local/bin/vim
 
 export LIBCURL_CFLAGS=-I/usr/local/opt/curl/include
 export LIBCURL_LIBS=-L/usr/local/opt/curl/lib
