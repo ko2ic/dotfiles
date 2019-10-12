@@ -6,7 +6,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # the order of priority 
 PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-PATH=$HOME/.ndenv/bin:$PATH
 
 #JAVA_HOME=$(/usr/libexec/java_home)
 #export JAVA_HOME
@@ -45,10 +44,14 @@ if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
-if which ndenv > /dev/null; then 
-  eval "$(ndenv init -)"
+export PATH=$HOME/.nodenv/bin:$PATH
+
+if which nodenv > /dev/null; then 
+  eval "$(nodenv init -)"
 fi
 export NODE_PATH="'$(npm root -g)'"
+
+export PATH=$PATH:./node_modules/.bin
 
 if [ -e ~/.rbenv ] ; then
   PATH=${HOME}/.rbenv/shims:$PATH
@@ -63,7 +66,6 @@ fi
 export DISPLAY=:0.0
 
 export SCREENDIR=~/.screens
-export SVN_EDITOR=/usr/local/bin/vim
 
 export LIBCURL_CFLAGS=-I/usr/local/opt/curl/include
 export LIBCURL_LIBS=-L/usr/local/opt/curl/lib

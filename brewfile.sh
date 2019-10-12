@@ -74,8 +74,7 @@ brew install rbenv-gemset
 #brew install imagemagick
 
 ## JavaScript
-#brew install nodebrew
-brew install ndenv
+brew install nodenv
 
 ## Python
 brew install pyenv-virtualenv

@@ -148,3 +148,14 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 set t_Co=256
 colorscheme desert
+
+" Jqでjsonをフォーマット
+command! -nargs=? Jq call s:Jq(<f-args>)
+function! s:Jq(...)
+    if 0 == a:0
+        let l:arg = "."
+    else
+        let l:arg = a:1
+    endif
+    execute "%! jq \"" . l:arg . "\""
+endfunction
