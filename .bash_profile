@@ -51,8 +51,6 @@ if which nodenv > /dev/null; then
 fi
 export NODE_PATH="'$(npm root -g)'"
 
-export PATH=$PATH:./node_modules/.bin
-
 if [ -e ~/.rbenv ] ; then
   PATH=${HOME}/.rbenv/shims:$PATH
   eval "$(rbenv init -)"
