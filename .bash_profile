@@ -48,9 +48,10 @@ fi
 if which ndenv > /dev/null; then 
   eval "$(ndenv init -)"
 fi
+export NODE_PATH="'$(npm root -g)'"
 
 if [ -e ~/.rbenv ] ; then
-#  PATH=${HOME}/.rbenv/shims:$PATH 
+  PATH=${HOME}/.rbenv/shims:$PATH
   eval "$(rbenv init -)"
 fi
 
