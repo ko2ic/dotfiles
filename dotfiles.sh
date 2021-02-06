@@ -1,5 +1,5 @@
 #!/bin/sh
-for dotfile in \.?* 
+for dotfile in .??* 
 do
     if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.DS_Store' ]
     then
@@ -34,3 +34,8 @@ then
     (mkdir ~/.screens>/dev/null 2>&1 && chmod 700 ~/.screens) || (echo "fail in settings of screen atachment after restarting" && rm -d ~/.screens>/dev/null 2>&1)
 fi
 
+echo '.zprofile' 
+ln -Fis "$PWD/.zprofile" $HOME
+
+echo '.zshrc' 
+ln -Fis "$PWD/.zshrc" $HOME

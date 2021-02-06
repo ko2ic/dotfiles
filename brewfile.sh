@@ -11,8 +11,8 @@ brew tap aspnet/dnx
 brew tap dart-lang/dart
 
 #brew tap caskroom/homebrew-cask
-brew tap caskroom/versions
-brew tap caskroom/cask
+brew tap homebrew/cask-versions
+brew tap homebrew/cask
 
 # Packages
 
@@ -98,8 +98,7 @@ brew install dart
 
 ## Editor
 brew install screen
-brew install vim --with-lua
-#brew install macvim --with-cscope --with-lua --HEAD
+brew install vim
 
 ## Git
 brew install git
@@ -124,13 +123,13 @@ brew install hub
 #brew install exiftool
 
 # Casks
-brew cask install skype
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install dropbox
-brew cask install divvy
-brew cask install atom
-brew cask install alfred
+brew install --cask skype
+brew install --cask google-chrome
+brew install --cask iterm2
+brew install --cask dropbox
+brew install --cask divvy
+brew install --cask atom
+brew install --cask alfred
 
 # Remove outdated versions
 brew cleanup
