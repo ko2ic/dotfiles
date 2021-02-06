@@ -37,6 +37,7 @@ brew install tika
 brew install libjpeg zlib
 brew install jq
 brew install mitmproxy
+brew install zplug
 
 # GPG
 brew install gpg2
@@ -128,7 +129,6 @@ brew install --cask google-chrome
 brew install --cask iterm2
 brew install --cask dropbox
 brew install --cask divvy
-brew install --cask atom
 brew install --cask alfred
 
 # Remove outdated versions
