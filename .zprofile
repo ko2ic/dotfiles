@@ -49,7 +49,10 @@ export PATH=$HOME/.nodenv/bin:$PATH
 if which nodenv > /dev/null; then 
   eval "$(nodenv init -)"
 fi
-export NODE_PATH="'$(npm root -g)'"
+
+if which npm > /dev/null; then 
+  export NODE_PATH="'$(npm root -g)'"
+fi
 
 if [ -e ~/.rbenv ] ; then
   PATH=${HOME}/.rbenv/shims:$PATH
@@ -58,6 +61,10 @@ fi
 
 if which swiftenv > /dev/null; then 
   eval "$(swiftenv init -)"; 
+fi
+
+if which /opt/homebrew/bin/brew > /dev/null; then 
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 #export MANPATH=/opt/local/man:$MANPATH

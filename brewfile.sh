@@ -85,7 +85,7 @@ brew install pyenv-virtualenv
 #brew install xsp
 
 ## Swift
-brew install xctool 
+#brew install xctool 
 brew install swiftlint
 brew install carthage
 brew install kylef/formulae/swiftenv
@@ -124,10 +124,8 @@ brew install hub
 #brew install exiftool
 
 # Casks
-brew install --cask skype
 brew install --cask google-chrome
 brew install --cask iterm2
-brew install --cask dropbox
 brew install --cask divvy
 brew install --cask alfred
 
