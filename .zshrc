@@ -41,6 +41,10 @@ done
 umask 0002 
 eval "$(hub alias -s)" # bash
 
+if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
 function gi() { curl https://www.gitignore.io/api/$@ ;}
 
 function rails_new() {
