@@ -38,17 +38,6 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-JDK_8="$SDKMAN_DIR/candidates/java/8.0.322-zulu"
-JDK_11="$SDKMAN_DIR/candidates/java/11.0.14-zulu"
-JDK_12="$SDKMAN_DIR/candidates/java/12.ea.12-open"
-
-JAVA_HOME="$JDK_11"
-export JAVA_HOME
-
 umask 0002 
 eval "$(hub alias -s)" # bash
 

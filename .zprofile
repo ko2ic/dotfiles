@@ -79,7 +79,15 @@ export SCREENDIR=~/.screens
 export LIBCURL_CFLAGS=-I/usr/local/opt/curl/include
 export LIBCURL_LIBS=-L/usr/local/opt/curl/lib
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+JDK_8="$SDKMAN_DIR/candidates/java/8.0.322-zulu"
+JDK_11="$SDKMAN_DIR/candidates/java/11.0.14-zulu"
+JDK_12="$SDKMAN_DIR/candidates/java/12.ea.12-open"
 
+JAVA_HOME="$JDK_11"
+export JAVA_HOME
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 
