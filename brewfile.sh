@@ -38,6 +38,7 @@ brew install libjpeg zlib
 brew install jq
 brew install mitmproxy
 brew install zplug
+brew install peco 
 
 # GPG
 brew install gpg2

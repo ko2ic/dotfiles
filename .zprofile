@@ -12,7 +12,7 @@ PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_HOME
-PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
+PATH=${ANDROID_HOME}/emulator:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
 STUDIO_JDK=${JAVA_HOME}
 ANDROID_SDK_ROOT=$ANDROID_HOME
 
@@ -40,9 +40,13 @@ PATH=~/.pub-cache/bin:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-if which pyenv > /dev/null; then 
-  eval "$(pyenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv virtualenv-init -)"
 fi
+
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 export PATH=$HOME/.nodenv/bin:$PATH
 
