@@ -5,7 +5,7 @@ export LANG=ja_JP.UTF-8
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # the order of priority 
-PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/opt/homebrew/bin:/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 #JAVA_HOME=$(/usr/libexec/java_home)
 #export JAVA_HOME
