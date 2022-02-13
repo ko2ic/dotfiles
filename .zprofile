@@ -5,7 +5,11 @@ export LANG=ja_JP.UTF-8
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # the order of priority 
-PATH=/opt/homebrew/bin:/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+if which /opt/homebrew/bin/brew > /dev/null; then 
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 #JAVA_HOME=$(/usr/libexec/java_home)
 #export JAVA_HOME
@@ -38,17 +42,18 @@ PATH=~/Sources/dart/flutter/bin:$PATH
 PATH=~/.pub-cache/bin:$PATH
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+PATH="$PYENV_ROOT/bin:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv virtualenv-init -)"
 fi
 
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-
-export PATH=$HOME/.nodenv/bin:$PATH
+#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
 
 if which nodenv > /dev/null; then 
   eval "$(nodenv init -)"
@@ -59,7 +64,6 @@ if which npm > /dev/null; then
 fi
 
 if [ -e ~/.rbenv ] ; then
-  PATH=${HOME}/.rbenv/shims:$PATH
   eval "$(rbenv init -)"
 fi
 
@@ -67,9 +71,6 @@ if which swiftenv > /dev/null; then
   eval "$(swiftenv init -)"; 
 fi
 
-if which /opt/homebrew/bin/brew > /dev/null; then 
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 
 #export MANPATH=/opt/local/man:$MANPATH
 export DISPLAY=:0.0
@@ -94,3 +95,5 @@ export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
 
+
+export PATH

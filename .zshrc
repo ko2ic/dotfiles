@@ -1,5 +1,6 @@
 # Initialize zplug via brew
 export ZPLUG_HOME=/usr/local/bin/zplug
+#export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # Load configuration framework
