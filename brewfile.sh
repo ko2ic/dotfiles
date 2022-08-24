@@ -90,6 +90,7 @@ brew install pyenv-virtualenv
 brew install swiftlint
 brew install carthage
 brew install kylef/formulae/swiftenv
+brew install mint 
 
 ## ReactNative
 brew install yarn
