@@ -77,6 +77,10 @@ bindkey '^f' peco-cdr
 alias deb='docker exec -it $(docker ps | peco | cut -d " " -f 1) /bin/bash'
 alias dea='docker exec -it $(docker ps | peco | cut -d " " -f 1) /bin/ash'
 
+# GCP
+source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+
 # Customize to your needs...
 #$ zplug install
 #$ ln -s $ZPLUG_HOME/repos/sorin-ionescu/prezto $HOME/.zprezto

@@ -93,8 +93,8 @@ brew install kylef/formulae/swiftenv
 brew install mint 
 
 ## ReactNative
-brew install yarn
-brew install watchman
+#brew install yarn
+#brew install watchman
 
 ## Dart
 brew install dart
@@ -112,6 +112,9 @@ brew install gibo
 ## Gist/Github
 brew install gist
 brew install hub
+
+## Google Cloud SDK
+brew install --cask google-cloud-sdk
 
 ## Heroku
 #brew install heroku-toolbelt
