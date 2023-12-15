@@ -133,6 +133,7 @@ brew install --cask google-chrome
 brew install --cask iterm2
 brew install --cask divvy
 brew install --cask alfred
+brew install --cask rancher
 
 # Remove outdated versions
 brew cleanup
