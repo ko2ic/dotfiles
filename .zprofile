@@ -84,10 +84,11 @@ export LIBCURL_LIBS=-L/usr/local/opt/curl/lib
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 JDK_8="$SDKMAN_DIR/candidates/java/8.0.322-zulu"
-JDK_11="$SDKMAN_DIR/candidates/java/11.0.14-zulu"
+JDK_11="$SDKMAN_DIR/candidates/java/11.0.19-zulu"
 JDK_12="$SDKMAN_DIR/candidates/java/12.ea.12-open"
+JDK_17="$SDKMAN_DIR/candidates/java/17.0.7-zulu"
 
-JAVA_HOME="$JDK_11"
+JAVA_HOME="$JDK_17"
 export JAVA_HOME
 export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
