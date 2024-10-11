@@ -39,6 +39,7 @@ brew install jq
 brew install mitmproxy
 brew install zplug
 brew install peco 
+brew install webp
 
 # GPG
 brew install gpg2
