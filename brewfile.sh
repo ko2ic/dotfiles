@@ -78,6 +78,7 @@ brew install rbenv-gemset
 
 ## JavaScript
 brew install nodenv
+brew install deno
 
 ## Python
 brew install pyenv-virtualenv
@@ -102,6 +103,7 @@ brew install dart
 
 ## Editor
 brew install screen
+brew install tmux
 brew install vim
 
 ## Git
