@@ -7,12 +7,14 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # the order of priority 
 PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
-if which /opt/homebrew/bin/brew > /dev/null; then 
+if which /opt/homebrew/bin/brew > /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-#JAVA_HOME=$(/usr/libexec/java_home)
-#export JAVA_HOME
+PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+
+JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME
 
 ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_HOME
@@ -55,6 +57,7 @@ export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
 
+export PATH="$HOME/.nodenv/bin:$PATH"
 if which nodenv > /dev/null; then 
   eval "$(nodenv init -)"
 fi
@@ -87,6 +90,8 @@ JDK_8="$SDKMAN_DIR/candidates/java/8.0.322-zulu"
 JDK_11="$SDKMAN_DIR/candidates/java/11.0.19-zulu"
 JDK_12="$SDKMAN_DIR/candidates/java/12.ea.12-open"
 JDK_17="$SDKMAN_DIR/candidates/java/17.0.7-zulu"
+JDK_19="$SDKMAN_DIR/candidates/java/19.0.1-openjdk"
+JDK_21="$SDKMAN_DIR/candidates/java/21.0.2-tem"
 
 JAVA_HOME="$JDK_17"
 export JAVA_HOME
@@ -96,5 +101,7 @@ export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
 
+export PATH="/Users/koji.ishii/.rd/bin:$PATH"
+export PATH="$(npm config get prefix)/bin:$PATH"
 
-export PATH
+
