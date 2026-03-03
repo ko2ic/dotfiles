@@ -13,8 +13,6 @@ fi
 
 PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 
-JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA_HOME
 
 ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_HOME
@@ -104,4 +102,7 @@ if [ -f '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-clou
 export PATH="/Users/koji.ishii/.rd/bin:$PATH"
 export PATH="$(npm config get prefix)/bin:$PATH"
 
+export PATH="$HOME/.local/bin:$PATH"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then source '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi

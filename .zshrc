@@ -1,5 +1,3 @@
-export PATH="$HOME/.local/bin:$PATH"
-
 # Initialize zplug via brew
 export ZPLUG_HOME=/usr/local/bin/zplug
 #export ZPLUG_HOME=/opt/homebrew/opt/zplug
@@ -80,8 +78,7 @@ alias deb='docker exec -it $(docker ps | peco | cut -d " " -f 1) /bin/bash'
 alias dea='docker exec -it $(docker ps | peco | cut -d " " -f 1) /bin/ash'
 
 # GCP
-source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then source '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Customize to your needs...
 #$ zplug install
@@ -94,9 +91,6 @@ done
 umask 0002 
 eval "$(hub alias -s)" # bash
 
-if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-fi
 
 function gi() { curl https://www.gitignore.io/api/$@ ;}
 
