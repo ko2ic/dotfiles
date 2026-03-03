@@ -6,11 +6,11 @@ do
         if [ $dotfile == '.rbenv' ]
         then
             echo "$dotfile/default-gems"
-           ln -Fis "$PWD/.rbenv/default-gems" "$HOME/.rbenv/default-gems"
+           ln -fis "$PWD/.rbenv/default-gems" "$HOME/.rbenv/default-gems"
            break
         fi
         echo $dotfile
-        ln -Fis "$PWD/$dotfile" $HOME
+        ln -fis "$PWD/$dotfile" $HOME
     fi
 done
 for vimfile in \.vim?* \.vim
@@ -21,13 +21,16 @@ do
            ln -Fis "$PWD/.vim/" "$HOME/.vim"
            break
         else 
-           ln -Fis "$PWD/$vimfile" $HOME
+           ln -fis "$PWD/$vimfile" $HOME
         fi   
 done
 rm -f $HOME/.vim/.vim
 
-echo '.screenrc' 
-ln -Fis "$PWD/.screenrc" $HOME
+echo '.screenrc'
+ln -fis "$PWD/.screenrc" $HOME
+
+echo '.tmux.conf'
+ln -fis "$PWD/.tmux.conf" $HOME
 
 if [ ! -e ~/.screens ]
 then
@@ -35,7 +38,7 @@ then
 fi
 
 echo '.zprofile' 
-ln -Fis "$PWD/.zprofile" $HOME
+ln -fis "$PWD/.zprofile" $HOME
 
 echo '.zshrc' 
-ln -Fis "$PWD/.zshrc" $HOME
+ln -fis "$PWD/.zshrc" $HOME

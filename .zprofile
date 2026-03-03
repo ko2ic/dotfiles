@@ -60,9 +60,6 @@ if which nodenv > /dev/null; then
   eval "$(nodenv init -)"
 fi
 
-if which npm > /dev/null; then 
-  export NODE_PATH="'$(npm root -g)'"
-fi
 
 if [ -e ~/.rbenv ] ; then
   eval "$(rbenv init -)"
@@ -100,7 +97,6 @@ export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 if [ -f '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
 
 export PATH="/Users/koji.ishii/.rd/bin:$PATH"
-export PATH="$(npm config get prefix)/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
