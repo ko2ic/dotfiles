@@ -106,3 +106,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then source '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# ローカル環境固有の設定（git管理外）
+[ -f ~/.zprofile.local ] && source ~/.zprofile.local
