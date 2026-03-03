@@ -1,3 +1,5 @@
+export PATH="$HOME/.local/bin:$PATH"
+
 # Initialize zplug via brew
 export ZPLUG_HOME=/usr/local/bin/zplug
 #export ZPLUG_HOME=/opt/homebrew/opt/zplug
@@ -98,6 +100,10 @@ fi
 
 function gi() { curl https://www.gitignore.io/api/$@ ;}
 
+function sleep_time() {
+    pmset -g log | grep "Display is turned"| sed 's/[ ][ ]*/ /g'
+}
+
 function rails_new() {
 
     while read -p "Please enter project name: " railsName ; do
@@ -157,4 +163,5 @@ EOS
     gi rails > .gitignore
 
 }
+
 
