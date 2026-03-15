@@ -1,0 +1,81 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/notify.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "permission_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/input-highlight.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/reset-highlight.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/input-highlight.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "WIN=$(tmux display-message -t $TMUX_PANE -p '#I') && tmux set-window-option -t :$WIN window-status-style 'fg=white,bg=red,bold'; tmux set-option -p -t $TMUX_PANE window-style 'bg=#330000'; tmux set-option -p -t $TMUX_PANE window-active-style 'bg=#330000'"
+          }
+        ]
+      }
+    ]
+  },
+  "includeCoAuthoredBy": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [
+      "Read(.env.*)",
+      "Read(id_rsa)",
+      "Read(id_ed25519)",
+      "Read(**/*token*)",
+      "Read(**/*key*)",
+      "Write(.env*)",
+      "Write(**/secrets/**)",
+      "Bash(sudo:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(nc:*)",
+      "Bash(psql:*)",
+      "Bash(mysql:*)",
+      "Bash(aws:*)",
+      "Bash(cdk:*)",
+      "Bash(npx cdk:*)"
+    ]
+  }
+}

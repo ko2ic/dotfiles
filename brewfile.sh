@@ -40,6 +40,7 @@ brew install mitmproxy
 brew install zplug
 brew install peco 
 brew install webp
+brew install terminal-notifier
 
 # GPG
 brew install gpg2

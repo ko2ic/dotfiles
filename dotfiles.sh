@@ -40,5 +40,21 @@ fi
 echo '.zprofile' 
 ln -fis "$PWD/.zprofile" $HOME
 
-echo '.zshrc' 
+echo '.zshrc'
 ln -fis "$PWD/.zshrc" $HOME
+
+echo '.claude/settings.json'
+mkdir -p "$HOME/.claude"
+ln -fis "$PWD/.claude/settings.json" "$HOME/.claude/settings.json"
+
+echo '.claude/statusline.sh'
+ln -fis "$PWD/.claude/statusline.sh" "$HOME/.claude/statusline.sh"
+
+echo '.claude/notify.sh'
+ln -fis "$PWD/.claude/notify.sh" "$HOME/.claude/notify.sh"
+
+echo '.claude/reset-highlight.sh'
+ln -fis "$PWD/.claude/reset-highlight.sh" "$HOME/.claude/reset-highlight.sh"
+
+echo '.claude/input-highlight.sh'
+ln -fis "$PWD/.claude/input-highlight.sh" "$HOME/.claude/input-highlight.sh"
