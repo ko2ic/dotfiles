@@ -1,6 +1,9 @@
 #!/bin/bash
 input=$(cat)
 MODEL=$(echo "$input" | jq -r '.model.display_name')
+DIR=$(echo "$input" | jq -r '.workspace.current_dir')
+REPO=$(echo "$DIR" | sed 's|.*/||')
+BRANCH=$(git -C "$DIR" rev-parse --abbrev-ref HEAD 2>/dev/null)
 PCT=$(echo "$input" | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
 COST=$(printf '$%.2f' "$(echo "$input" | jq -r '.cost.total_cost_usd // 0')")
 
@@ -12,4 +15,5 @@ else C="$GREEN"; fi
 FILLED=$((PCT / 10)); EMPTY=$((10 - FILLED))
 BAR=$(printf "%${FILLED}s" | tr ' ' '█')$(printf "%${EMPTY}s" | tr ' ' '░')
 
-echo -e "[$MODEL] ${C}${BAR}${RESET} ${PCT}% | ${COST}"
+if [ -n "$BRANCH" ]; then REPO_INFO="$REPO:$BRANCH"; else REPO_INFO="$REPO"; fi
+echo -e "[$REPO_INFO] [$MODEL] ${C}${BAR}${RESET} ${PCT}% | ${COST}"
