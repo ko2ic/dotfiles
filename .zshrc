@@ -158,4 +158,48 @@ EOS
 
 }
 
+# tmux レイアウト自動構築
+ide() {
+  local session="$1"
+  if [ -z "$session" ]; then
+    echo "Usage: ide <session-name> [path1] [path2] [path3]"
+    return 1
+  fi
+  shift
+
+  local dir1="$1"
+  local dir2="$2"
+  local dir3="$3"
+  [ -z "$dir1" ] && dir1="${IDE_CLAUDE_PATHS[1]:-$(pwd)}"
+  [ -z "$dir2" ] && dir2="${IDE_CLAUDE_PATHS[2]:-$dir1}"
+  [ -z "$dir3" ] && dir3="${IDE_CLAUDE_PATHS[3]:-$dir1}"
+
+  # 既存セッションがあれば削除（現在アタッチ中なら警告）
+  if tmux has-session -t "$session" 2>/dev/null; then
+    if [ "$(tmux display-message -p '#S')" = "$session" ]; then
+      echo "Error: currently attached to session '$session'. Detach first or use a different name."
+      return 1
+    fi
+    tmux kill-session -t "$session"
+  fi
+
+  # 新規セッション作成（Window 0: shell）
+  tmux new-session -d -s "$session" -n shell -c "$dir1"
+
+  # Window 1: claude（3ペイン横分割）
+  tmux new-window -t "${session}:1" -n claude -c "$dir1"
+  tmux split-window -t "${session}:claude" -v -c "$dir2"
+  tmux split-window -t "${session}:claude" -v -c "$dir3"
+  tmux select-layout -t "${session}:claude" even-vertical
+
+  # Window 2: git（3ペイン横分割、同じパス構成）
+  tmux new-window -t "${session}:2" -n git -c "$dir1"
+  tmux split-window -t "${session}:git" -v -c "$dir2"
+  tmux split-window -t "${session}:git" -v -c "$dir3"
+  tmux select-layout -t "${session}:git" even-vertical
+
+  # claude ウィンドウを選択してアタッチ
+  tmux select-window -t "${session}:claude"
+  tmux attach-session -t "$session"
+}
 
