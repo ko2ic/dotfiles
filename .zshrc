@@ -162,17 +162,25 @@ EOS
 ide() {
   local session="$1"
   if [ -z "$session" ]; then
-    echo "Usage: ide <session-name> [path1] [path2] [path3]"
+    echo "Usage: ide <session-name> [ide1-path1] [ide1-path2] [ide1-path3] [ide2-path1] [ide2-path2] [ide2-path3] [analytics-path]"
     return 1
   fi
   shift
 
-  local dir1="$1"
-  local dir2="$2"
-  local dir3="$3"
-  [ -z "$dir1" ] && dir1="${IDE_CLAUDE_PATHS[1]:-$(pwd)}"
-  [ -z "$dir2" ] && dir2="${IDE_CLAUDE_PATHS[2]:-$dir1}"
-  [ -z "$dir3" ] && dir3="${IDE_CLAUDE_PATHS[3]:-$dir1}"
+  local ide1_path1="$1"
+  local ide1_path2="$2"
+  local ide1_path3="$3"
+  local ide2_path1="$4"
+  local ide2_path2="$5"
+  local ide2_path3="$6"
+  local analytics_path="$7"
+  [ -z "$ide1_path1" ] && ide1_path1="${IDE1_CLAUDE_PATHS[1]:-$(pwd)}"
+  [ -z "$ide1_path2" ] && ide1_path2="${IDE1_CLAUDE_PATHS[2]:-$ide1_path1}"
+  [ -z "$ide1_path3" ] && ide1_path3="${IDE1_CLAUDE_PATHS[3]:-$ide1_path1}"
+  [ -z "$ide2_path1" ] && ide2_path1="${IDE2_CLAUDE_PATHS[1]:-$ide1_path1}"
+  [ -z "$ide2_path2" ] && ide2_path2="${IDE2_CLAUDE_PATHS[2]:-$ide2_path1}"
+  [ -z "$ide2_path3" ] && ide2_path3="${IDE2_CLAUDE_PATHS[3]:-$ide2_path1}"
+  [ -z "$analytics_path" ] && analytics_path="${ANALYTICS_CLAUDE_PATH:-$HOME}"
 
   # 既存セッションがあれば削除（現在アタッチ中なら警告）
   if tmux has-session -t "$session" 2>/dev/null; then
@@ -183,23 +191,26 @@ ide() {
     tmux kill-session -t "$session"
   fi
 
-  # 新規セッション作成（Window 0: shell）
-  tmux new-session -d -s "$session" -n shell -c "$dir1"
+  # 新規セッション作成（Window 0: home）
+  tmux new-session -d -s "$session" -n home -c "$HOME"
 
-  # Window 1: claude（3ペイン横分割）
-  tmux new-window -t "${session}:1" -n claude -c "$dir1"
-  tmux split-window -t "${session}:claude" -v -c "$dir2"
-  tmux split-window -t "${session}:claude" -v -c "$dir3"
-  tmux select-layout -t "${session}:claude" even-vertical
-
-  # Window 2: git（3ペイン横分割、同じパス構成）
-  tmux new-window -t "${session}:2" -n git -c "$dir1"
-  tmux split-window -t "${session}:git" -v -c "$dir2"
-  tmux split-window -t "${session}:git" -v -c "$dir3"
+  # Window 1: git（3ペイン横分割）
+  tmux new-window -t "${session}:1" -n git -c "$ide1_path1"
+  tmux split-window -t "${session}:git" -v -c "$ide1_path2"
+  tmux split-window -t "${session}:git" -v -c "$ide1_path3"
   tmux select-layout -t "${session}:git" even-vertical
 
-  # claude ウィンドウを選択してアタッチ
-  tmux select-window -t "${session}:claude"
+  # Window 2: git2（3ペイン横分割、別IDE環境）
+  tmux new-window -t "${session}:2" -n git2 -c "$ide2_path1"
+  tmux split-window -t "${session}:git2" -v -c "$ide2_path2"
+  tmux split-window -t "${session}:git2" -v -c "$ide2_path3"
+  tmux select-layout -t "${session}:git2" even-vertical
+
+  # Window 3: analytics
+  tmux new-window -t "${session}:3" -n analytics -c "$analytics_path"
+
+  # git ウィンドウを選択してアタッチ
+  tmux select-window -t "${session}:git"
   tmux attach-session -t "$session"
 }
 

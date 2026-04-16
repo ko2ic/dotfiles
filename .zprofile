@@ -94,9 +94,9 @@ export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '/Users/ko2ic/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '~/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc' ]; then source '~/Sources/tool/google-cloud-sdk/google-cloud-sdk/google-cloud-sdk/path.bash.inc'; fi
 
-export PATH="/Users/koji.ishii/.rd/bin:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -104,7 +104,9 @@ export PATH="$HOME/.local/bin:$PATH"
 if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then source '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
 
 # ide() default paths (set in .zprofile.local)
-# IDE_CLAUDE_PATHS=(~/Sources/project1 ~/Sources/project2 ~/Sources/project3)
+# IDE1_CLAUDE_PATHS=(~/Sources/project1 ~/Sources/project2 ~/Sources/project3)
+# IDE2_CLAUDE_PATHS=(~/Sources/project4 ~/Sources/project5 ~/Sources/project6)
+# ANALYTICS_CLAUDE_PATH=~/Sources/project5
 
 # ローカル環境固有の設定（git管理外）
 [ -f ~/.zprofile.local ] && source ~/.zprofile.local
