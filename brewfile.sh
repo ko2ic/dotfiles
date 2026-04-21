@@ -112,6 +112,7 @@ brew install git
 brew install gitsh
 #brew install tig
 brew install gibo
+brew install git-delta
 
 ## Gist/Github
 brew install gist
