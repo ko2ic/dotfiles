@@ -177,16 +177,9 @@ ide() {
   [ -z "$ide1_path1" ] && ide1_path1="${IDE1_CLAUDE_PATHS[1]:-$(pwd)}"
   [ -z "$ide1_path2" ] && ide1_path2="${IDE1_CLAUDE_PATHS[2]:-$ide1_path1}"
   [ -z "$ide1_path3" ] && ide1_path3="${IDE1_CLAUDE_PATHS[3]:-$ide1_path1}"
-  if [ "$session" = "claude" ]; then
-    # ide claude のときは git2 を git と同じディレクトリで split する
-    [ -z "$ide2_path1" ] && ide2_path1="$ide1_path1"
-    [ -z "$ide2_path2" ] && ide2_path2="$ide1_path2"
-    [ -z "$ide2_path3" ] && ide2_path3="$ide1_path3"
-  else
-    [ -z "$ide2_path1" ] && ide2_path1="${IDE2_CLAUDE_PATHS[1]:-$ide1_path1}"
-    [ -z "$ide2_path2" ] && ide2_path2="${IDE2_CLAUDE_PATHS[2]:-$ide2_path1}"
-    [ -z "$ide2_path3" ] && ide2_path3="${IDE2_CLAUDE_PATHS[3]:-$ide2_path1}"
-  fi
+  [ -z "$ide2_path1" ] && ide2_path1="${IDE2_CLAUDE_PATHS[1]:-$ide1_path1}"
+  [ -z "$ide2_path2" ] && ide2_path2="${IDE2_CLAUDE_PATHS[2]:-$ide2_path1}"
+  [ -z "$ide2_path3" ] && ide2_path3="${IDE2_CLAUDE_PATHS[3]:-$ide2_path1}"
   [ -z "$analytics_path" ] && analytics_path="${ANALYTICS_CLAUDE_PATH:-$HOME}"
 
   # 既存セッションがあれば削除（現在アタッチ中なら警告）
@@ -207,14 +200,20 @@ ide() {
   tmux split-window -t "${session}:git" -v -c "$ide1_path3"
   tmux select-layout -t "${session}:git" even-vertical
 
-  # Window 2: git2（3ペイン横分割、別IDE環境）
-  tmux new-window -t "${session}:2" -n git2 -c "$ide2_path1"
-  tmux split-window -t "${session}:git2" -v -c "$ide2_path2"
-  tmux split-window -t "${session}:git2" -v -c "$ide2_path3"
+  # Window 2: git2（git と同じディレクトリ構成で split）
+  tmux new-window -t "${session}:2" -n git2 -c "$ide1_path1"
+  tmux split-window -t "${session}:git2" -v -c "$ide1_path2"
+  tmux split-window -t "${session}:git2" -v -c "$ide1_path3"
   tmux select-layout -t "${session}:git2" even-vertical
 
-  # Window 3: analytics
-  tmux new-window -t "${session}:3" -n analytics -c "$analytics_path"
+  # Window 3: git3（3ペイン横分割、別IDE環境）
+  tmux new-window -t "${session}:3" -n git3 -c "$ide2_path1"
+  tmux split-window -t "${session}:git3" -v -c "$ide2_path2"
+  tmux split-window -t "${session}:git3" -v -c "$ide2_path3"
+  tmux select-layout -t "${session}:git3" even-vertical
+
+  # Window 4: analytics
+  tmux new-window -t "${session}:4" -n analytics -c "$analytics_path"
 
   # git ウィンドウを選択してアタッチ
   tmux select-window -t "${session}:git"
