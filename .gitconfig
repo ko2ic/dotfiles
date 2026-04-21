@@ -1,0 +1,35 @@
+[user]
+	name = ko2ic
+	email = ko2ic.dev@gmail.com
+[core]
+	excludesfile = /Users/koji.ishii/.gitignore
+	editor = /opt/homebrew/bin/vim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictStyle = zdiff3
+	tool = vimdiff
+[init]
+	defaultBranch = main
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    line-numbers = true
+    side-by-side = true
+    file-style = "yellow bold"
+    file-decoration-style = "#666666 ul"
+    # 行番号＋左側の線
+    line-numbers-left-format  = "{nm:>4}│"
+    line-numbers-left-style   = "bold #666666"
+
+    # 行番号＋右側の線
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-right-style  = "bold #666666"
+
+    # decorations セクションを有効にする
+    features = decorations
+
+[delta "decorations"]
+    # 関数（hunk）のヘッダ周りの枠線をグレーの箱に
+    hunk-header-decoration-style = "#666666 box ul"
